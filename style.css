@@ -1,0 +1,98 @@
+@import url(./globalVariables.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: var(--global-background-color);
+  font-family: var(--global-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background: var(--main-section-background-color);
+  display: flex;
+  width: 845px;
+  height: 539px;
+  margin-top: 100px;
+  border-radius: var(--primary-border-radius);
+  padding: 15px;
+  gap: 45px;
+}
+
+aside {
+  background: url(./assets/images/bg-sidebar-desktop.svg);
+  flex: 1 1 30%;
+  border-radius: var(--secondary-border-radius);
+  color: var(--global-tertiary-color);
+}
+
+section {
+  /* width: 60%; */
+  flex: 1 1 70%;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  margin: 37px auto auto 27px;
+  gap: 25px;
+  counter-reset: step 0;
+}
+
+.progress-bar__step {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  counter-increment: step 1;
+}
+
+.progress-bar__step__circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--global-tertiary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.progress-bar__step__text {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--global-font-size);
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.progress-bar__step__text::before {
+  content: 'Step ' counter(step);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--global-secondary-color);
+  margin-right: 10px;
+}
+
+/* Footer  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

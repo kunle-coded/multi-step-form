@@ -1,0 +1,14 @@
+:root {
+  --global-font-family: 'Ubuntu', sans-serif;
+  --global-font-size: 16px;
+  --global-font-color: hsl(228, 12%, 44%);
+  --global-background-color: hsl(206, 94%, 87%);
+  --global-primary-color: hsl(228, 45%, 44%);
+  --global-secondary-color: hsl(231, 11%, 63%);
+  --global-tertiary-color: hsl(0, 0%, 100%);
+
+  --primary-border-radius: 13px;
+  --secondary-border-radius: 10px;
+
+  --main-section-background-color: hsl(0, 0%, 100%);
+}
