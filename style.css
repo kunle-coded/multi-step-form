@@ -6,23 +6,24 @@
 }
 
 body {
-  background: var(--global-background-color);
+  background: var(--body-background-color);
   font-family: var(--global-font-family);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--global-secondary-font-color);
 }
 
 main {
   background: var(--main-section-background-color);
   display: flex;
-  width: 845px;
+  width: 945px;
   height: 539px;
   margin-top: 100px;
   border-radius: var(--primary-border-radius);
   padding: 15px;
-  gap: 45px;
+  /* gap: 50px; */
 }
 
 aside {
@@ -34,8 +35,22 @@ aside {
 
 section {
   /* width: 60%; */
+
   flex: 1 1 70%;
+  height: 100%;
+  position: relative;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--global-primary-font-color);
+}
+
+/* Sidebar styles */
 
 .progress-bar {
   display: flex;
@@ -68,7 +83,8 @@ section {
 .progress-bar__step__text {
   display: flex;
   flex-direction: column;
-  font-size: var(--global-font-size);
+  /* font-size: var(--global-font-size); */
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
@@ -78,10 +94,394 @@ section {
 .progress-bar__step__text::before {
   content: 'Step ' counter(step);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 18px;
-  color: var(--global-secondary-color);
+  color: var(--global-secondary-font-color);
   margin-right: 10px;
+}
+
+/* TODO add class if step (1,2,3,4) or next-setp button clicked */
+.selected {
+  background: var(--action-background-color);
+  color: var(--global-primary-font-color);
+  border: none;
+}
+
+/* Main Section page 1 */
+
+.main--section {
+  background: var(--main-section-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+  padding: 50px 90px;
+  position: absolute;
+
+  transition: z-index 0.5s ease-in-out;
+}
+
+.main--section:nth-child(1) {
+  z-index: 5;
+}
+.main--section:nth-child(2) {
+  z-index: 4;
+}
+.main--section:nth-child(3) {
+  z-index: 3;
+}
+.main--section:nth-child(4) {
+  z-index: 2;
+}
+
+.main--section:nth-child(5) {
+  z-index: 6;
+}
+
+.main--section-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.main--section-info h1 {
+  font-size: var(--global-font-size-big);
+  font-weight: 700;
+}
+.main--section-info p {
+  font-size: var(--global-font-size-small);
+}
+
+.main--section-form {
+  margin-bottom: 90px;
+}
+.main--section-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* padding: 0 20px; */
+}
+
+.main--section-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main--section form label {
+  color: var(--global-primary-font-color);
+  font-size: var(--global-font-size-small);
+}
+.main--section form input {
+  border: 1px solid var(--global-tertiary-font-color);
+  border-radius: var(--tertiary-border-radius);
+  padding: 8px 20px;
+  font-size: var(--global-font-size-small);
+  color: var(--global-primary-font-color);
+}
+
+.valid {
+  border: 1px solid var(--global-valid-color);
+}
+
+.invalid {
+  border: 1px solid var(--global-invalid-color);
+}
+/* .main--section-form input:invalid:before {
+  content: 'This field is required';
+  color: var(--global-invalid-color);
+  font-size: var(--global-font-size-small);
+  font-weight: 400;
+  line-height: 18px;
+} */
+
+.main--section-button {
+  margin-left: auto;
+}
+
+.main--section-button-icon {
+  background: var(--global-primary-font-color);
+  border: none;
+  border-radius: var(--tertiary-border-radius);
+  color: var(--global-tertiary-color);
+  font-size: var(--global-font-size);
+  font-weight: 500;
+  height: 45px;
+  width: 110px;
+  cursor: pointer;
+}
+
+.main--section-button-icon:hover {
+  background: var(--global-accent-color);
+}
+
+/* Main Section page 2 */
+
+.main--section-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.main--section-plan__card {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.main--section-plan__card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 100%;
+  padding: 15px;
+  /* gap: 15px; */
+  border: 1px solid var(--global-tertiary-font-color);
+  border-radius: var(--secondary-border-radius);
+  cursor: pointer;
+}
+
+.main--section-plan__card-item:hover {
+  border: 1px solid var(--global-primary-font-color);
+}
+
+/* TODO add class if plan selected */
+.selected-plan {
+  background: var(--body-background-color);
+  border: 1px solid var(--global-primary-font-color);
+}
+
+.main--section-plan__card-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.main--section-plan__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main--section-plan__title {
+  font-size: var(--global-font-size);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--global-primary-font-color);
+}
+
+.main--section-plan__billing {
+  background: var(--body-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 50px;
+  width: 100%;
+  border-radius: var(--secondary-border-radius);
+}
+
+.main--section-plan__billing-toggle {
+  background: var(--global-primary-font-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 25px;
+  width: 45px;
+  padding: 5px auto;
+  border-radius: var(--primary-border-radius);
+  cursor: pointer;
+}
+
+.main--section-plan__billing-toggle__circle {
+  background: var(--global-tertiary-color);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: auto 5px;
+}
+
+/* TODO add class if toggle clicked */
+.toggled {
+  justify-content: flex-end;
+}
+
+.main--section-plan__billing-item {
+  font-weight: 500;
+}
+
+/* TODO add class if toggle clicked */
+.toggled-text {
+  color: var(--global-primary-font-color);
+}
+
+/* Main Section page 3 */
+.main--section-adons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.main--section-adons__card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--global-tertiary-font-color);
+  border-radius: var(--secondary-border-radius);
+  cursor: pointer;
+}
+
+.main--section-adons__card-item:hover {
+  border: 1px solid var(--global-primary-font-color);
+}
+
+.main--section-adons__card-item input {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--global-tertiary-font-color);
+  border-radius: var(--secondary-border-radius);
+}
+
+/* .main--section-adons__card-item input[type='checkbox']:checked + label {
+  background-color: green;
+} */
+
+.main--section-adons__texts {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  padding-left: 30px;
+  gap: 5px;
+}
+
+/* TODO add class if adons selected */
+.selected-adons {
+  background: var(--body-background-color);
+  border: 1px solid var(--global-primary-font-color);
+}
+
+/* Main Section page 4 */
+.main--section-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.main--section-confirmation__card-item {
+  background: var(--Alabaster);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 15px 20px 10px 20px;
+  border-radius: var(--secondary-border-radius);
+  cursor: pointer;
+}
+
+.main--section-confirmation__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.main--section-confirmation__divider {
+  border-bottom: 1px solid var(--global-secondary-font-color);
+  padding: 0 10px;
+  height: auto;
+  width: 100%;
+}
+
+.main--section-confirmation__texts {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  gap: 5px;
+}
+
+.main--section-confirmation__plan-price {
+  font-size: var(--global-font-size);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--global-primary-font-color);
+}
+
+.main--section-confirmation__change {
+  font-size: var(--global-font-size-small);
+}
+
+.main--section-confirmation__change:hover {
+  color: var(--global-accent-color);
+}
+
+.main--section-confirmation__adons {
+  padding-top: 20px;
+}
+
+.main--section-confirmation-adons__texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.main--section-confirmation-adons__title {
+  font-size: var(--global-font-size-small);
+}
+
+.main--section-confirmation-adons__price {
+  font-size: var(--global-font-size-small);
+  color: var(--global-primary-font-color);
+}
+
+/* TODO add padding-bottom (15) if 2 & (30) if 1 adons selected */
+
+.main--section-confirmation__total-texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+}
+
+.main--section-confirmation__total-price {
+  font-size: var(--global-font-size-medium);
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--global-accent-color);
+}
+
+.main--section-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main--section-back-button {
+  color: var(--global-primary-font-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Main section page 5 */
+.main--section-thanks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  text-align: center;
+  margin-top: 90px;
 }
 
 /* Footer  */

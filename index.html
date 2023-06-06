@@ -52,43 +52,299 @@
       <section>
         <!-- Step 1 start -->
 
-        Personal info Please provide your name, email address, and phone number.
-        Name e.g. Stephen King Email Address e.g. stephenking@lorem.com Phone
-        Number e.g. +1 234 567 890 Next Step
+        <div class="main--section" id="form">
+          <div class="main--section-info">
+            <h2>Personal info</h2>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+
+          <div class="main--section-form">
+            <form action="/" method="post">
+              <div class="main--section-form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  placeholder="e.g. Stephen King"
+                />
+              </div>
+
+              <div class="main--section-form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+              </div>
+
+              <div class="main--section-form-group">
+                <label for="phone">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  required
+                  placeholder="e.g. +1 234 567 890"
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="main--section-button">
+            <button
+              type="submit"
+              value="Next Step"
+              class="main--section-button-icon"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
 
         <!-- Step 1 end -->
 
         <!-- Step 2 start -->
 
-        Select your plan You have the option of monthly or yearly billing.
-        Arcade $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
+        <!-- Select your plan You have the option of monthly or yearly billing.
+        Arcade $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step -->
+
+        <div class="main--section" id="plan">
+          <div class="main--section-info">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+
+          <div class="main--section-plan">
+            <div class="main--section-plan__card">
+              <div class="main--section-plan__card-item selected-plan">
+                <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
+                <div class="main--section-plan__texts">
+                  <div class="main--section-plan__title">Arcade</div>
+                  <div>$9/mo</div>
+                </div>
+              </div>
+              <div class="main--section-plan__card-item">
+                <img
+                  src="./assets/images/icon-advanced.svg"
+                  alt="icon-advanced"
+                />
+                <div class="main--section-plan__texts">
+                  <div class="main--section-plan__title">Advanced</div>
+                  <div>$12/mo</div>
+                </div>
+              </div>
+              <div class="main--section-plan__card-item">
+                <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
+                <div class="main--section-plan__texts">
+                  <div class="main--section-plan__title">Pro</div>
+                  <div>$15/mo</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--section-plan__billing">
+              <div class="main--section-plan__billing-item toggled-text">
+                <div>Monthly</div>
+                <!-- <div>$9/mo</div> -->
+              </div>
+              <div class="main--section-plan__billing-toggle">
+                <div class="main--section-plan__billing-toggle__circle"></div>
+              </div>
+              <div class="main--section-plan__billing-item">
+                <div>Yearly</div>
+                <!-- <div>$99/year</div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="main--section-buttons">
+            <div class="main--section-back-button">Go Back</div>
+            <button
+              type="submit"
+              value="Next Step"
+              class="main--section-button-icon"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
 
         <!-- Step 2 end -->
 
         <!-- Step 3 start -->
 
-        Pick add-ons Add-ons help enhance your gaming experience. Online service
+        <!-- Pick add-ons Add-ons help enhance your gaming experience. Online service
         Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud
         save +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go
-        Back Next Step
+        Back Next Step -->
+        <div class="main--section" id="adons">
+          <div class="main--section-info">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+
+          <div class="main--section-adons">
+            <div class="main--section-adons">
+              <div class="main--section-adons__card-item selected-adons">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="online"
+                    id="adons-checkbox"
+                    checked
+                  />
+                  <label for="adons-checkbox"></label>
+                </div>
+                <div class="main--section-adons__texts">
+                  <div class="main--section-plan__title">Online service</div>
+                  <div>Access to multiplayer games</div>
+                </div>
+                <div>+$1/mo</div>
+              </div>
+              <div class="main--section-adons__card-item">
+                <div>
+                  <input type="checkbox" name="storage" id="adons-checkbox" />
+                  <label for="adons-checkbox"></label>
+                </div>
+                <div class="main--section-adons__texts">
+                  <div class="main--section-plan__title">Larger storage</div>
+                  <div>Extra 1TB of cloud save</div>
+                </div>
+                <div>+$2/mo</div>
+              </div>
+              <div class="main--section-adons__card-item">
+                <div>
+                  <input type="checkbox" name="custom" id="adons-checkbox" />
+                  <label for="adons-checkbox"></label>
+                </div>
+                <div class="main--section-adons__texts">
+                  <div class="main--section-plan__title">
+                    Customizable Profile
+                  </div>
+                  <div>Custom theme on your profile</div>
+                </div>
+                <div>+$2/mo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="main--section-buttons">
+            <div class="main--section-back-button">Go Back</div>
+            <button
+              type="submit"
+              value="Next Step"
+              class="main--section-button-icon"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
 
         <!-- Step 3 end -->
 
         <!-- Step 4 start -->
 
-        Finishing up Double-check everything looks OK before confirming.
+        <!-- Finishing up Double-check everything looks OK before confirming. -->
 
         <!-- Dynamically add subscription and add-on selections here -->
 
-        Total (per month/year) Go Back Confirm
+        <!-- Total (per month/year) Go Back Confirm -->
+
+        <div class="main--section" id="confirm">
+          <div class="main--section-info">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+          </div>
+
+          <div class="main--section-confirmation">
+            <div class="main--section-confirmation__card-item">
+              <div class="main--section-confirmation__plan">
+                <div class="main--section-confirmation__texts">
+                  <div class="main--section-plan__title">Arcade</div>
+                  <div class="main--section-confirmation__change">
+                    <a href="#">Change</a>
+                  </div>
+                </div>
+                <div class="main--section-confirmation__plan-price">$9/mo</div>
+              </div>
+              <div class="main--section-confirmation__divider"></div>
+              <div class="main--section-confirmation__adons">
+                <div class="main--section-confirmation-adons__texts">
+                  <div class="main--section-confirmation-adons__title">
+                    Larger storage
+                  </div>
+                  <div class="main--section-confirmation-adons__price">
+                    +$2/mo
+                  </div>
+                </div>
+
+                <div class="main--section-confirmation-adons__texts">
+                  <div class="main--section-confirmation-adons__title">
+                    Larger storage
+                  </div>
+                  <div class="main--section-confirmation-adons__price">
+                    +$2/mo
+                  </div>
+                </div>
+
+                <div class="main--section-confirmation-adons__texts">
+                  <div class="main--section-confirmation-adons__title">
+                    Larger storage
+                  </div>
+                  <div class="main--section-confirmation-adons__price">
+                    +$2/mo
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main--section-confirmation__total-texts">
+              <div>Total (per month/year)</div>
+              <div class="main--section-confirmation__total-price">+$12/mo</div>
+            </div>
+          </div>
+
+          <div class="main--section-buttons">
+            <div class="main--section-back-button">Go Back</div>
+            <button
+              type="submit"
+              value="Next Step"
+              class="main--section-button-icon"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
 
         <!-- Step 4 end -->
 
         <!-- Step 5 start -->
 
-        Thank you! Thanks for confirming your subscription! We hope you have fun
+        <!-- Thank you! Thanks for confirming your subscription! We hope you have fun
         using our platform. If you ever need support, please feel free to email
-        us at support@loremgaming.com.
+        us at support@loremgaming.com. -->
+
+        <div class="main--section" id="confirm">
+          <div class="main--section-thanks">
+            <div>
+              <img src="./assets/images/icon-thank-you.svg" alt="" />
+            </div>
+            <div class="main--section-info">
+              <h1>Thank you!</h1>
+            </div>
+
+            <div>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </div>
+          </div>
+        </div>
 
         <!-- Step 5 end -->
       </section>
@@ -98,7 +354,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://github.com/kunle-coded">Kunle Adesokan</a>.
     </div>
   </body>
 </html>
