@@ -100,7 +100,7 @@ h6 {
   margin-right: 10px;
 }
 
-/* TODO add class if step (1,2,3,4) or next-setp button clicked */
+/* TODO add class to circles if step (1,2,3,4) or next-setp button clicked */
 .selected {
   background: var(--action-background-color);
   color: var(--global-primary-font-color);
@@ -118,25 +118,36 @@ h6 {
   width: 100%;
   padding: 50px 90px;
   position: absolute;
+  visibility: hidden;
 
   transition: z-index 0.5s ease-in-out;
 }
 
-.main--section:nth-child(1) {
-  z-index: 5;
+.hide-section {
+  z-index: -1;
 }
+
+.visible-section {
+  z-index: 7;
+  visibility: visible;
+}
+
+/* .main--section:nth-child(1) {
+  z-index: 7;
+  visibility: visible;
+} */
 .main--section:nth-child(2) {
-  z-index: 4;
+  /* z-index: 4; */
 }
 .main--section:nth-child(3) {
-  z-index: 3;
+  /* z-index: 3; */
 }
 .main--section:nth-child(4) {
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .main--section:nth-child(5) {
-  z-index: 6;
+  /* z-index: 6; */
 }
 
 .main--section-info {

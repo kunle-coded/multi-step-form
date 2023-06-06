@@ -27,39 +27,38 @@
     <main>
       <aside>
         <div class="progress-bar">
-          <div class="progress-bar__step">
-            <div class="progress-bar__step__circle">1</div>
+          <div class="progress-bar__step" data-step="0">
+            <div class="progress-bar__step__circle selected">1</div>
             <div class="progress-bar__step__text">Your info</div>
           </div>
 
-          <div class="progress-bar__step">
+          <div class="progress-bar__step" data-step="1">
             <div class="progress-bar__step__circle">2</div>
             <div class="progress-bar__step__text">Select plan</div>
           </div>
 
-          <div class="progress-bar__step">
+          <div class="progress-bar__step" data-step="2">
             <div class="progress-bar__step__circle">3</div>
             <div class="progress-bar__step__text">Add-ons</div>
           </div>
 
-          <div class="progress-bar__step">
+          <div class="progress-bar__step" data-step="3">
             <div class="progress-bar__step__circle">4</div>
             <div class="progress-bar__step__text">Summary</div>
           </div>
-        </div>
       </aside>
 
       <section>
         <!-- Step 1 start -->
 
-        <div class="main--section" id="form">
+        <div class="main--section visible-section" id="form">
           <div class="main--section-info">
             <h2>Personal info</h2>
             <p>Please provide your name, email address, and phone number.</p>
           </div>
 
           <div class="main--section-form">
-            <form action="/" method="post">
+            <form onsubmit="validateForm()">
               <div class="main--section-form-group">
                 <label for="name">Name</label>
                 <input
@@ -67,6 +66,7 @@
                   name="name"
                   id="name"
                   required
+                  autocomplete="name"
                   placeholder="e.g. Stephen King"
                 />
               </div>
@@ -78,6 +78,7 @@
                   name="email"
                   id="email"
                   required
+                  autocomplete="email"
                   placeholder="e.g. stephenking@lorem.com"
                 />
               </div>
@@ -89,6 +90,7 @@
                   name="phone"
                   id="phone"
                   required
+                  autocomplete="tel"
                   placeholder="e.g. +1 234 567 890"
                 />
               </div>
@@ -121,14 +123,14 @@
 
           <div class="main--section-plan">
             <div class="main--section-plan__card">
-              <div class="main--section-plan__card-item selected-plan">
+              <div class="main--section-plan__card-item selected-plan" id="arcade">
                 <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Arcade</div>
                   <div>$9/mo</div>
                 </div>
               </div>
-              <div class="main--section-plan__card-item">
+              <div class="main--section-plan__card-item" id="advance">
                 <img
                   src="./assets/images/icon-advanced.svg"
                   alt="icon-advanced"
@@ -138,7 +140,7 @@
                   <div>$12/mo</div>
                 </div>
               </div>
-              <div class="main--section-plan__card-item">
+              <div class="main--section-plan__card-item" id="pro">
                 <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Pro</div>
@@ -195,10 +197,10 @@
                   <input
                     type="checkbox"
                     name="online"
-                    id="adons-checkbox"
+                    id="adons-online"
                     checked
                   />
-                  <label for="adons-checkbox"></label>
+                  <label for="adons-online"></label>
                 </div>
                 <div class="main--section-adons__texts">
                   <div class="main--section-plan__title">Online service</div>
@@ -208,8 +210,8 @@
               </div>
               <div class="main--section-adons__card-item">
                 <div>
-                  <input type="checkbox" name="storage" id="adons-checkbox" />
-                  <label for="adons-checkbox"></label>
+                  <input type="checkbox" name="storage" id="adons-storage" />
+                  <label for="adons-storage"></label>
                 </div>
                 <div class="main--section-adons__texts">
                   <div class="main--section-plan__title">Larger storage</div>
@@ -219,8 +221,8 @@
               </div>
               <div class="main--section-adons__card-item">
                 <div>
-                  <input type="checkbox" name="custom" id="adons-checkbox" />
-                  <label for="adons-checkbox"></label>
+                  <input type="checkbox" name="custom" id="adons-custom" />
+                  <label for="adons-custom"></label>
                 </div>
                 <div class="main--section-adons__texts">
                   <div class="main--section-plan__title">
@@ -356,5 +358,7 @@
         >Frontend Mentor</a
       >. Coded by <a href="https://github.com/kunle-coded">Kunle Adesokan</a>.
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
