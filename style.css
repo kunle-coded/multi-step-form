@@ -260,6 +260,7 @@ h6 {
 }
 
 /* TODO add class if plan selected */
+/* NOTE Added remove todo later */
 .selected-plan {
   background: var(--body-background-color);
   border: 1px solid var(--global-primary-font-color);
@@ -276,7 +277,8 @@ h6 {
   gap: 5px;
 }
 
-.main--section-plan__title {
+.main--section-plan__title,
+.main--section-confirmation__title {
   font-size: var(--global-font-size);
   font-weight: 500;
   line-height: 20px;
@@ -315,6 +317,7 @@ h6 {
 }
 
 /* TODO add class if toggle clicked */
+/* NOTE Added, to remove todo later */
 .toggled {
   justify-content: flex-end;
 }
@@ -329,7 +332,7 @@ h6 {
 }
 
 /* Main Section page 3 */
-.main--section-adons {
+.main--section-addons {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -337,7 +340,7 @@ h6 {
   margin-bottom: 15px;
 }
 
-.main--section-adons__card-item {
+.main--section-addons__card-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -349,22 +352,22 @@ h6 {
   cursor: pointer;
 }
 
-.main--section-adons__card-item:hover {
+.main--section-addons__card-item:hover {
   border: 1px solid var(--global-primary-font-color);
 }
 
-.main--section-adons__card-item input {
+.main--section-addons__card-item input {
   width: 20px;
   height: 20px;
   border: 1px solid var(--global-tertiary-font-color);
   border-radius: var(--secondary-border-radius);
 }
 
-/* .main--section-adons__card-item input[type='checkbox']:checked + label {
+/* .main--section-addons__card-item input[type='checkbox']:checked + label {
   background-color: green;
 } */
 
-.main--section-adons__texts {
+.main--section-addons__texts {
   display: flex;
   flex-direction: column;
   margin-right: auto;
@@ -372,8 +375,9 @@ h6 {
   gap: 5px;
 }
 
-/* TODO add class if adons selected */
-.selected-adons {
+/* TODO add class if addons selected */
+/* NOTE Added, to remove todo later */
+.selected-addons {
   background: var(--body-background-color);
   border: 1px solid var(--global-primary-font-color);
 }
@@ -436,28 +440,33 @@ h6 {
   color: var(--global-accent-color);
 }
 
-.main--section-confirmation__adons {
+.main--section-confirmation__addons {
   padding-top: 20px;
 }
 
-.main--section-confirmation-adons__texts {
+.main--section-confirmation-addons__texts {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
   width: 100%;
+  visibility: hidden;
 }
 
-.main--section-confirmation-adons__title {
+.show-addon {
+  visibility: visible;
+}
+
+.main--section-confirmation-addons__title {
   font-size: var(--global-font-size-small);
 }
 
-.main--section-confirmation-adons__price {
+.main--section-confirmation-addons__price {
   font-size: var(--global-font-size-small);
   color: var(--global-primary-font-color);
 }
 
-/* TODO add padding-bottom (15) if 2 & (30) if 1 adons selected */
+/* TODO add padding-bottom (15) if 2 & (30) if 1 addons selected */
 
 .main--section-confirmation__total-texts {
   display: flex;

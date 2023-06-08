@@ -127,7 +127,7 @@
                 <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Arcade</div>
-                  <div>$9/mo</div>
+                  <div class="main--section-plan__price" id="arcade-price">$9/mo</div>
                 </div>
               </div>
               <div class="main--section-plan__card-item" id="advance">
@@ -136,15 +136,15 @@
                   alt="icon-advanced"
                 />
                 <div class="main--section-plan__texts">
-                  <div class="main--section-plan__title">Advanced</div>
-                  <div>$12/mo</div>
+                  <div class="main--section-plan__title">Advance</div>
+                  <div class="main--section-plan__price" id="advance-price">$12/mo</div>
                 </div>
               </div>
               <div class="main--section-plan__card-item" id="pro">
                 <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Pro</div>
-                  <div>$15/mo</div>
+                  <div class="main--section-plan__price" id="pro-price">$15/mo</div>
                 </div>
               </div>
             </div>
@@ -184,47 +184,47 @@
         Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud
         save +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go
         Back Next Step -->
-        <div class="main--section" id="adons">
+        <div class="main--section" id="addons">
           <div class="main--section-info">
             <h1>Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
           </div>
 
-          <div class="main--section-adons">
-            <div class="main--section-adons">
-              <div class="main--section-adons__card-item selected-adons">
+          <div class="main--section-addons">
+            <div class="main--section-addons">
+              <div class="main--section-addons__card-item selected-addons">
                 <div>
                   <input
                     type="checkbox"
                     name="online"
-                    id="adons-online"
+                    id="addons-online"
                     checked
                   />
-                  <label for="adons-online"></label>
+                  <label for="addons-online"></label>
                 </div>
-                <div class="main--section-adons__texts">
+                <div class="main--section-addons__texts">
                   <div class="main--section-plan__title">Online service</div>
                   <div>Access to multiplayer games</div>
                 </div>
                 <div>+$1/mo</div>
               </div>
-              <div class="main--section-adons__card-item">
+              <div class="main--section-addons__card-item">
                 <div>
-                  <input type="checkbox" name="storage" id="adons-storage" />
-                  <label for="adons-storage"></label>
+                  <input type="checkbox" name="storage" id="addons-storage" />
+                  <label for="addons-storage"></label>
                 </div>
-                <div class="main--section-adons__texts">
+                <div class="main--section-addons__texts">
                   <div class="main--section-plan__title">Larger storage</div>
                   <div>Extra 1TB of cloud save</div>
                 </div>
                 <div>+$2/mo</div>
               </div>
-              <div class="main--section-adons__card-item">
+              <div class="main--section-addons__card-item">
                 <div>
-                  <input type="checkbox" name="custom" id="adons-custom" />
-                  <label for="adons-custom"></label>
+                  <input type="checkbox" name="custom" id="addons-custom" />
+                  <label for="addons-custom"></label>
                 </div>
-                <div class="main--section-adons__texts">
+                <div class="main--section-addons__texts">
                   <div class="main--section-plan__title">
                     Customizable Profile
                   </div>
@@ -267,7 +267,7 @@
             <div class="main--section-confirmation__card-item">
               <div class="main--section-confirmation__plan">
                 <div class="main--section-confirmation__texts">
-                  <div class="main--section-plan__title">Arcade</div>
+                  <div class="main--section-confirmation__title">Arcade</div>
                   <div class="main--section-confirmation__change">
                     <a href="#">Change</a>
                   </div>
@@ -275,30 +275,30 @@
                 <div class="main--section-confirmation__plan-price">$9/mo</div>
               </div>
               <div class="main--section-confirmation__divider"></div>
-              <div class="main--section-confirmation__adons">
-                <div class="main--section-confirmation-adons__texts">
-                  <div class="main--section-confirmation-adons__title">
+              <div class="main--section-confirmation__addons">
+                <div class="main--section-confirmation-addons__texts addons-online">
+                  <div class="main--section-confirmation-addons__title">
+                    Online service
+                  </div>
+                  <div class="main--section-confirmation-addons__price">
+                    +$1/mo
+                  </div>
+                </div>
+
+                <div class="main--section-confirmation-addons__texts addons-storage">
+                  <div class="main--section-confirmation-addons__title">
                     Larger storage
                   </div>
-                  <div class="main--section-confirmation-adons__price">
+                  <div class="main--section-confirmation-addons__price">
                     +$2/mo
                   </div>
                 </div>
 
-                <div class="main--section-confirmation-adons__texts">
-                  <div class="main--section-confirmation-adons__title">
-                    Larger storage
+                <div class="main--section-confirmation-addons__texts addons-custom">
+                  <div class="main--section-confirmation-addons__title">
+                    Customizable Profile
                   </div>
-                  <div class="main--section-confirmation-adons__price">
-                    +$2/mo
-                  </div>
-                </div>
-
-                <div class="main--section-confirmation-adons__texts">
-                  <div class="main--section-confirmation-adons__title">
-                    Larger storage
-                  </div>
-                  <div class="main--section-confirmation-adons__price">
+                  <div class="main--section-confirmation-addons__price">
                     +$2/mo
                   </div>
                 </div>
@@ -306,7 +306,7 @@
             </div>
 
             <div class="main--section-confirmation__total-texts">
-              <div>Total (per month/year)</div>
+              <div class="main--section-confirmation__total-title">Total </div>
               <div class="main--section-confirmation__total-price">+$12/mo</div>
             </div>
           </div>
