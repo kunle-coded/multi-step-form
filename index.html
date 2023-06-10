@@ -60,8 +60,12 @@
           <div class="main--section-form">
             <form onsubmit="validateForm()">
               <div class="main--section-form-group">
-                <label for="name">Name</label>
+                <div class="main--section-form-labels">
+                  <label for="name">Name</label>
+                  <p class="error">This field is required</p>
+                </div>
                 <input
+                  class="main--section-form-input"
                   type="text"
                   name="name"
                   id="name"
@@ -72,8 +76,12 @@
               </div>
 
               <div class="main--section-form-group">
-                <label for="email">Email</label>
+                <div class="main--section-form-labels">
+                  <label for="email">Email</label>
+                  <p class="error">This field is required</p>
+                </div>
                 <input
+                  class="main--section-form-input"  
                   type="email"
                   name="email"
                   id="email"
@@ -84,12 +92,18 @@
               </div>
 
               <div class="main--section-form-group">
-                <label for="phone">Phone</label>
+                <div class="main--section-form-labels">
+                  <label for="phone">Phone</label>
+                  <p class="error">This field is required</p>
+                </div>
+                
                 <input
+                  class="main--section-form-input"
                   type="tel"
                   name="phone"
                   id="phone"
                   required
+                  pattern=[0-9]{3}-[0-9]{3}-[0-9]{4}
                   autocomplete="tel"
                   placeholder="e.g. +1 234 567 890"
                 />
@@ -128,6 +142,7 @@
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Arcade</div>
                   <div class="main--section-plan__price" id="arcade-price">$9/mo</div>
+                  <div class="main--section-plan__price-slash">2 months free</div>
                 </div>
               </div>
               <div class="main--section-plan__card-item" id="advance">
@@ -138,6 +153,7 @@
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Advance</div>
                   <div class="main--section-plan__price" id="advance-price">$12/mo</div>
+                  <div class="main--section-plan__price-slash">2 months free</div>
                 </div>
               </div>
               <div class="main--section-plan__card-item" id="pro">
@@ -145,6 +161,7 @@
                 <div class="main--section-plan__texts">
                   <div class="main--section-plan__title">Pro</div>
                   <div class="main--section-plan__price" id="pro-price">$15/mo</div>
+                  <div class="main--section-plan__price-slash">2 months free</div>
                 </div>
               </div>
             </div>

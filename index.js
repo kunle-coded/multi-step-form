@@ -42,6 +42,10 @@ const confirmationTotalTitle = document.querySelector(
 const confirmationTotalPrice = document.querySelector(
   '.main--section-confirmation__total-price'
 );
+const formError = document.querySelector('.error');
+const priceSlash = document.querySelectorAll(
+  '.main--section-plan__price-slash'
+);
 
 // console.log(addons);
 
@@ -171,25 +175,67 @@ changeOrder.addEventListener('click', e => {
   //   updateProgressBar(progressBar[0]);
   //   updateSection(sections[0]);
   backStep();
+  backStep();
 });
 
 // 2.6 Add functionality to the form validation
 
 const validateForm = () => {
-  let formInputs = document.querySelectorAll('.main--section-form input');
+  const formInputs = document.querySelectorAll('.main--section-form input');
   let formValid = true;
 
   formInputs.forEach(input => {
-    if (!input.value) {
+    const error = input.previousElementSibling.lastElementChild;
+
+    if (input.value === '') {
       formValid = false;
-      input.classList.add('error');
+
+      error.style.visibility = 'visible';
+      input.classList.add('invalid');
+    } else if (input.name === 'email') {
+      if (!input.value.includes('@') || !input.value.includes('.')) {
+        formValid = false;
+
+        error.style.visibility = 'visible';
+        input.classList.add('invalid');
+      }
     } else {
-      input.classList.remove('error');
+      error.style.visibility = 'hidden';
+      input.classList.remove('invalid');
     }
   });
 
   return formValid;
 };
+
+// 2.6.1 Add form validation before next button is clicked
+
+const formInputs = document.querySelectorAll('.main--section-form input');
+
+formInputs.forEach(input => {
+  input.addEventListener('input', () => {
+    const error = input.previousElementSibling.lastElementChild;
+
+    if (input.validity.typeMismatch) {
+      error.innerHTML = 'Please enter a valid email address';
+      error.style.visibility = 'visible';
+      input.classList.add('invalid');
+    } else {
+      error.style.visibility = 'hidden';
+      input.classList.remove('invalid');
+    }
+
+    if (input.name === 'phone' && input.value != Number(input.value)) {
+      error.innerHTML = 'Please enter a valid phone number';
+      error.style.visibility = 'visible';
+      input.classList.add('invalid');
+    }
+
+    if (input.value != '') {
+      input.classList.add('valid');
+    }
+  });
+});
 
 // 2.7 Add functionality to the plan selection
 
@@ -228,34 +274,21 @@ const updatePriceTexts = () => {
   let priceValue;
   const priceText = orderData.billing === 'monthly' ? '/mo' : '/yr';
 
+  const billingFactor = orderData.billing === 'monthly' ? 1 : 10;
+
   prices.forEach(price => {
     const priceId = price.id;
+    const planIdNew = priceId.split('-')[0];
+    const planPrice = planData[planIdNew].price;
+    const planPriceText = planPrice * billingFactor;
 
-    switch (priceId) {
-      case 'arcade-price':
-        priceValue =
-          orderData.billing === 'monthly'
-            ? planData.arcade.price
-            : planData.arcade.price * 10;
-        price.innerHTML = `$${priceValue}<span>${priceText}</span>`;
-        break;
-      case 'advance-price':
-        priceValue =
-          orderData.billing === 'monthly'
-            ? planData.advance.price
-            : planData.advance.price * 10;
-        price.innerHTML = `$${priceValue}<span>${priceText}</span>`;
-        break;
-      case 'pro-price':
-        priceValue =
-          orderData.billing === 'monthly'
-            ? planData.pro.price
-            : planData.pro.price * 10;
-        price.innerHTML = `$${priceValue}<span>${priceText}</span>`;
-        break;
-      default:
-        break;
-    }
+    price.innerHTML = `$${planPriceText}<span>${priceText}</span>`;
+  });
+
+  priceSlash.forEach(slash => {
+    orderData.billing === 'yearly'
+      ? (slash.style.visibility = 'visible')
+      : (slash.style.visibility = 'hidden');
   });
 };
 
@@ -307,17 +340,12 @@ const updatePrice = () => {
 
 // 2.11 Add functionality to the order confirmation
 
-// confirmPlanText, confirmPlanPriceText ($9/mo), onlineAddons, storageAddons, customizableAddons, confirmationTotalTitle, confirmationTotalPrice (+$12/mo)
-// const planId = orderData.plan;
-// console.log(planId[0].toLocaleUpperCase() + planId.slice(1));
-
 const updateConfirmation = () => {
   //updateAdons();
   updatePrice();
   const planId = orderData.plan;
   const planPrice = planData[planId].price;
   const selectedAddons = orderData.addons;
-  console.log('selected addons', selectedAddons);
   const planText = planId[0].toLocaleUpperCase() + planId.slice(1);
 
   const billingFactor = orderData.billing === 'monthly' ? 1 : 10;
@@ -338,7 +366,6 @@ const updateConfirmation = () => {
   confirmationAddons.forEach(addOn => {
     // Get the ID of the add-on from its class
     const addonId = addOn.classList[1];
-    console.log('addon ---id', addonId);
 
     // Check if the add-on is selected in the orderData
     const isSelected = selectedAddons.includes(addonId);
@@ -350,9 +377,7 @@ const updateConfirmation = () => {
 
       // Update the add-on details
       const addonTitleText = addOn.firstElementChild;
-      console.log('confirmed addon title', addonTitleText);
       const addonPriceText = addOn.lastElementChild;
-      console.log('confirmed addon title', addonPriceText);
       const addonPrice = addOnData[addonId].price;
       const totalAddonPrice = addonPrice * billingFactor;
 
@@ -374,11 +399,12 @@ const updateConfirmation = () => {
 // 2.13 Add functionality to the order summary
 
 // 3. EventListeners
-progressBar.forEach(step => {
-  step.addEventListener('click', () => {
-    updateProgressBar(step);
-  });
-});
+
+// progressBar.forEach(step => {
+//   step.addEventListener('click', () => {
+//     updateProgressBar(step);
+//   });
+// });
 
 nextButtons.forEach((button, index) => {
   if (nextButtons[0]) {

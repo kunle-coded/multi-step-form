@@ -88,7 +88,6 @@ h6 {
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 .progress-bar__step__text::before {
@@ -169,7 +168,7 @@ h6 {
 .main--section-form form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
   /* padding: 0 20px; */
 }
 
@@ -183,12 +182,23 @@ h6 {
   color: var(--global-primary-font-color);
   font-size: var(--global-font-size-small);
 }
-.main--section form input {
+.main--section-form-input {
   border: 1px solid var(--global-tertiary-font-color);
   border-radius: var(--tertiary-border-radius);
   padding: 8px 20px;
   font-size: var(--global-font-size-small);
   color: var(--global-primary-font-color);
+}
+
+.main--section-form-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  font-size: var(--global-font-size-small);
+  color: var(--global-invalid-color);
+  visibility: hidden;
 }
 
 .valid {
@@ -275,6 +285,12 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.main--section-plan__price-slash {
+  font-size: var(--global-font-size-smaller);
+  color: var(--global-primary-font-color);
+  visibility: hidden;
 }
 
 .main--section-plan__title,
