@@ -24,6 +24,9 @@ const toggleIcon = document.querySelector(
 const addons = document.querySelectorAll(
   '.main--section-addons__card-item input'
 );
+const addonCards = document.querySelectorAll(
+  '.main--section-addons__card-item'
+);
 const confirmPlanText = document.querySelector(
   '.main--section-confirmation__title'
 );
@@ -302,20 +305,31 @@ const updateBillingDuration = () => {
 
 // 2.8 Add functionality to the addons selection
 
+addonCards.forEach(addonCard => {
+  const addon = addonCard.querySelector('input');
+
+  addonCard.addEventListener('click', () => {
+    addon.checked = !addon.checked;
+    updateAdons(addon);
+  });
+});
+
 const updateAdons = addon => {
   const addonId = addon.id;
   const addonValue = addon.checked;
-  const noAddon = !addon.checked;
   const addonPrice = addOnData[addonId].price;
+  const addonCard = addon.parentNode.parentNode;
 
   if (addonValue) {
     if (!orderData.addons.includes(addonId)) {
       orderData.addons.push(addonId);
     }
     orderData.addOnPrice += addonPrice;
+    addonCard.classList.add('selected-addons');
   } else {
     orderData.addons = orderData.addons.filter(item => item !== addonId);
     orderData.addOnPrice -= addonPrice;
+    addonCard.classList.remove('selected-addons');
   }
 
   updatePrice();
@@ -331,11 +345,9 @@ const updatePrice = () => {
 
   const totalPlanPrice = planPrice * billingFactor;
   orderData.totalPlanPrice = totalPlanPrice;
-  console.log(totalPlanPrice);
 
   const totalPrice = (planPrice + addonsPrice) * billingFactor;
   orderData.total = totalPrice;
-  console.log(orderData);
 };
 
 // 2.11 Add functionality to the order confirmation
@@ -423,10 +435,8 @@ backButtons.forEach(button => {
 });
 
 addons.forEach(addon => {
-  addon.addEventListener('click', () => {
+  addon.addEventListener('click', event => {
+    event.stopPropagation();
     updateAdons(addon);
   });
 });
-
-// q: how to delete git branch
-// a: git branch -d branchName
