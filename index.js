@@ -427,3 +427,6 @@ addons.forEach(addon => {
     updateAdons(addon);
   });
 });
+
+// q: how to delete git branch
+// a: git branch -d branchName
