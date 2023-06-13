@@ -50,8 +50,6 @@ const priceSlash = document.querySelectorAll(
   '.main--section-plan__price-slash'
 );
 
-// console.log(addons);
-
 // 1.1 Create global variables
 
 // Order data
@@ -141,6 +139,10 @@ const nextStep = () => {
   if (counter === 3) {
     updateConfirmation();
   }
+
+  if (counter === 3) {
+    document.querySelector('.mobile-button button').innerHTML = 'Confirm';
+  }
 };
 
 // 2.3 Update the visibility of the sections
@@ -168,6 +170,10 @@ const backStep = () => {
   if (backSection) {
     updateSection(backSection);
     counter--;
+  }
+
+  if (counter != 3) {
+    document.querySelector('.mobile-button button').innerHTML = 'Next';
   }
 };
 

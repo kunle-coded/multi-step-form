@@ -50,6 +50,10 @@ h6 {
   color: var(--global-primary-font-color);
 }
 
+input[type='checkbox']:checked {
+  accent-color: var(--global-accent-color);
+}
+
 /* Sidebar styles */
 
 .progress-bar {
@@ -83,7 +87,6 @@ h6 {
 .progress-bar__step__text {
   display: flex;
   flex-direction: column;
-  /* font-size: var(--global-font-size); */
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -129,24 +132,6 @@ h6 {
 .visible-section {
   z-index: 7;
   visibility: visible;
-}
-
-/* .main--section:nth-child(1) {
-  z-index: 7;
-  visibility: visible;
-} */
-.main--section:nth-child(2) {
-  /* z-index: 4; */
-}
-.main--section:nth-child(3) {
-  /* z-index: 3; */
-}
-.main--section:nth-child(4) {
-  /* z-index: 2; */
-}
-
-.main--section:nth-child(5) {
-  /* z-index: 6; */
 }
 
 .main--section-info {
@@ -379,16 +364,16 @@ h6 {
   border-radius: var(--secondary-border-radius);
 }
 
-/* .main--section-addons__card-item input[type='checkbox']:checked + label {
-  background-color: green;
-} */
-
 .main--section-addons__texts {
   display: flex;
   flex-direction: column;
   margin-right: auto;
   padding-left: 30px;
   gap: 5px;
+}
+
+.addon-price {
+  color: var(--global-accent-color);
 }
 
 /* TODO add class if addons selected */
@@ -452,7 +437,11 @@ h6 {
   font-size: var(--global-font-size-small);
 }
 
-.main--section-confirmation__change:hover {
+.main--section-confirmation__change a {
+  color: inherit;
+}
+
+.main--section-confirmation__change a:hover {
   color: var(--global-accent-color);
 }
 
@@ -510,6 +499,10 @@ h6 {
   cursor: pointer;
 }
 
+footer {
+  visibility: hidden;
+}
+
 /* Main section page 5 */
 .main--section-thanks {
   display: flex;
@@ -531,4 +524,155 @@ h6 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    /* background: red; */
+    display: flex;
+    align-items: unset;
+    justify-content: unset;
+    font-family: var(--global-font-family);
+  }
+
+  main {
+    background: var(--body-background-color);
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+    margin-top: auto;
+    padding: 0;
+    border-radius: 0;
+    /* padding: 15px; */
+  }
+
+  aside {
+    background: url(./assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* flex: 1 1 30%; */
+    border-radius: 0;
+    /* flex-grow: initial;
+    flex-shrink: initial;
+    flex-basis: initial; */
+    margin: auto;
+    height: 30%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  section {
+    /* width: 60%; */
+    /* flex-grow: initial;
+    flex-shrink: initial;
+    flex-basis: initial; */
+    /* flex: 1 1 70%; */
+    position: relative;
+    /* height: 40%; */
+    /* background-color: aqua; */
+    height: 700px;
+    margin: -99px 15px 30px 15px;
+    /* border-radius: var(--secondary-border-radius); */
+
+    z-index: 1;
+  }
+
+  footer {
+    /* background: greenyellow; */
+    background: var(--main-section-background-color);
+    height: 80px;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .progress-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin: 70px auto; */
+    gap: 15px;
+    /* counter-reset: step 0; */
+  }
+
+  .progress-bar__step {
+    display: flex;
+    /* gap: 20px; */
+    /* align-items: center;
+    gap: 20px;
+    counter-increment: step 1; */
+  }
+
+  .progress-bar__step .progress-bar__step__text {
+    display: none;
+  }
+
+  .main--section {
+    /* background: var(--main-section-background-color); */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 40px 25px;
+    position: absolute;
+    visibility: visible;
+    border-radius: var(--primary-border-radius);
+
+    transition: z-index 0.5s ease-in-out;
+  }
+
+  .main--section-plan {
+    height: inherit;
+  }
+  .main--section-plan__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main--section-plan__card-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 85px;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  #confirm {
+    gap: 40px;
+    padding: 90px auto;
+  }
+
+  .main--section-addons__card-item {
+    padding: 10px;
+  }
+
+  .main--section-plan__title,
+  .main--section-confirmation__title {
+    font-size: var(--global-font-size-small);
+  }
+
+  .main--section-addons {
+    font-size: var(--global-font-size-smaller);
+  }
+
+  .main--section-plan__billing-toggle {
+    border-radius: var(--secondary-border-radius);
+  }
+
+  .desktop-button {
+    display: none;
+  }
+
+  footer {
+    visibility: visible;
+  }
+
+  .attribution {
+    display: none;
+  }
 }
