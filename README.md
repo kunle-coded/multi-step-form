@@ -114,5 +114,5 @@ I want to create an e-commerce project, because that allow me practice more adva
 ## Author
 
 - Website - [Adekunle Adesokan](https://github.com/kunle-coded)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/kunle-coded)
+- Frontend Mentor - [@kunle-coded](https://www.frontendmentor.io/profile/kunle-coded)
 - Twitter - [@kunle_ronald](https://www.twitter.com/kunle_ronald)
