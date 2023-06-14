@@ -23,7 +23,8 @@ node_modules
 build
 
 # Ignore README.md
-*.md
+README-template.md
+style-guide.md
 
 # Ignore design files
 design

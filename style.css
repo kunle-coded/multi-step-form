@@ -551,11 +551,7 @@ footer {
     background: url(./assets/images/bg-sidebar-mobile.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* flex: 1 1 30%; */
     border-radius: 0;
-    /* flex-grow: initial;
-    flex-shrink: initial;
-    flex-basis: initial; */
     margin: auto;
     height: 30%;
     width: 100%;
@@ -563,14 +559,7 @@ footer {
   }
 
   section {
-    /* width: 60%; */
-    /* flex-grow: initial;
-    flex-shrink: initial;
-    flex-basis: initial; */
-    /* flex: 1 1 70%; */
     position: relative;
-    /* height: 40%; */
-    /* background-color: aqua; */
     height: 700px;
     margin: -99px 15px 30px 15px;
     /* border-radius: var(--secondary-border-radius); */
@@ -579,7 +568,6 @@ footer {
   }
 
   footer {
-    /* background: greenyellow; */
     background: var(--main-section-background-color);
     height: 80px;
     width: 100%;
@@ -593,17 +581,12 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* margin: 70px auto; */
     gap: 15px;
     /* counter-reset: step 0; */
   }
 
   .progress-bar__step {
     display: flex;
-    /* gap: 20px; */
-    /* align-items: center;
-    gap: 20px;
-    counter-increment: step 1; */
   }
 
   .progress-bar__step .progress-bar__step__text {
@@ -611,7 +594,6 @@ footer {
   }
 
   .main--section {
-    /* background: var(--main-section-background-color); */
     display: flex;
     flex-direction: column;
     gap: 10px;
