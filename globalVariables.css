@@ -13,14 +13,11 @@
   --global-accent-color: hsl(243, 100%, 62%);
   --global-valid-color: hsl(120, 50%, 30%);
   --global-invalid-color: hsl(354, 84%, 57%);
-  /* --global-secondary-color: hsl(231, 11%, 63%); */
   --global-tertiary-color: hsl(0, 0%, 100%);
-
+  --main-section-background-color: hsl(0, 0%, 100%);
   --Alabaster: hsl(231, 100%, 99%);
 
   --primary-border-radius: 13px;
   --secondary-border-radius: 10px;
   --tertiary-border-radius: 5px;
-
-  --main-section-background-color: hsl(0, 0%, 100%);
 }
