@@ -20,7 +20,6 @@ const monthYearText = document.querySelectorAll(
 const toggleIcon = document.querySelector(
   '.main--section-plan__billing-toggle__circle'
 );
-
 const addons = document.querySelectorAll(
   '.main--section-addons__card-item input'
 );
@@ -181,8 +180,6 @@ const backStep = () => {
 
 changeOrder.addEventListener('click', e => {
   e.preventDefault();
-  //   updateProgressBar(progressBar[0]);
-  //   updateSection(sections[0]);
   backStep();
   backStep();
 });
